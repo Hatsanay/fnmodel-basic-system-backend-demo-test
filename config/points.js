@@ -3,3 +3,4 @@
 // redeem → discount_amount  (body)
 // ไฟล์นี้ไม่มี config อีกต่อไป
 //ทดสอบ
+//ทดสอบ
