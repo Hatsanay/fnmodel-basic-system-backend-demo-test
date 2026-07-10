@@ -6,6 +6,7 @@ const { redeem }       = require('../controllers/customers/redeem')
 const { getRewards }                                          = require('../controllers/rewards/getRewards')
 const { redeemReward }                                        = require('../controllers/rewards/redeemReward')
 const { getAllRewards, createReward, updateReward, deleteReward } = require('../controllers/rewards/manageRewards')
+const { speak }                                                                  = require('../controllers/tts/speak')
 const { getPackages }                                                            = require('../controllers/countdown/getPackages')
 const { getAllPackages, createPackage, updatePackage, deletePackage }             = require('../controllers/countdown/managePackages')
 
@@ -26,6 +27,8 @@ router.get('/v1/countdown/packages/all',  getAllPackages)  // ทั้งหม
 router.post('/v1/countdown/packages',     createPackage)  // สร้าง
 router.put('/v1/countdown/packages/:id',  updatePackage)  // แก้ไข
 router.delete('/v1/countdown/packages/:id', deletePackage) // ลบ
+
+router.get('/v1/tts',         speak)          // TTS proxy
 
 router.get('/v1/health',      (req, res) => res.json({ success: true, time: new Date() }))
 router.get('/v1/testdeploy', (req, res) => res.json({ success: true, message: 'deploy ทำงาน', time: new Date() }))
