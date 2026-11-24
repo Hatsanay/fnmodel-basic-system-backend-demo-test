@@ -30,7 +30,15 @@ router.delete('/v1/countdown/packages/:id', deletePackage) // ลบ
 
 router.get('/v1/tts',         speak)          // TTS proxy
 
-router.get('/v1/health',      (req, res) => res.json({ success: true, time: new Date() }))
+router.get('/v1/health', (req, res) => {
+    const db = req.app.locals.dbStatus || { ok: false, error: 'UNKNOWN' }
+    res.status(db.ok ? 200 : 503).json({
+        success: db.ok,
+        db:      db.ok ? 'ok' : 'error',
+        dbError: db.error,
+        time:    new Date(),
+    })
+})
 router.get('/v1/testdeploy', (req, res) => res.json({ success: true, message: 'deploy ทำงาน', time: new Date() }))
 
 module.exports = router
