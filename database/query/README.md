@@ -21,7 +21,7 @@ SQL ของระบบ FN Model (DB: MariaDB บน server / MySQL 8.4 ใน
 
 | วันที่ | local | DB test | DB production | หมายเหตุ |
 |---|---|---|---|---|
-| 2026-11-24 | — | ☐ | ☐ | เวอร์ชันแรก (รวม package_vehicle_type) |
+| 2026-11-24 | — | ☑ 2026-11-25 (ยืนยันจาก API ว่ามี package_vehicle_type) | ☐ | เวอร์ชันแรก (รวม package_vehicle_type) |
 
 (local รัน `alter_add_vehicle_type.sql` ไปแล้ว 2026-11-24 — โครงสร้างเท่ากัน)
 
